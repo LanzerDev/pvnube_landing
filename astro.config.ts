@@ -60,9 +60,9 @@ export default defineConfig({
           removeAttributeQuotes: false,
         },
       },
-      Image: false,
+      Image: true, // Activar compresión de imágenes
       JavaScript: true,
-      SVG: false,
+      SVG: true, // Activar compresión SVG
       Logger: 1,
     }),
 
@@ -73,6 +73,19 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
+    // Mejorar la configuración de optimización de imágenes
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        quality: 80, // Reducir calidad para mejorar rendimiento
+        formats: ['avif', 'webp'], // Priorizar formatos modernos
+        limitInputPixels: false, // Permitir imágenes grandes
+        // Definir tamaños predeterminados para imágenes responsivas
+        defaultWidth: 1280,
+        breakpoints: [640, 750, 828, 1080, 1200, 1920],
+        backgroundColor: '#ffffff00', // Transparente por defecto
+      },
+    },
   },
 
   markdown: {
