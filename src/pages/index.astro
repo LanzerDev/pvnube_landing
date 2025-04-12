@@ -1,0 +1,502 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+import { headerData } from '~/navigation';
+import FAQs from '~/components/widgets/FAQs.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Sistema ERP + CRM en la nube',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'secondary',
+          text: 'Login',
+          href: '#',
+        },
+        {
+          variant: 'primary',
+          text: 'Sign Up',
+          href: '#',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Sistema ERP + CRM"
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Agenda una demo GRATIS', href: 'https://outlook.office365.com/owa/calendar/PVnube@pcnetmexico.onmicrosoft.com/bookings/s/xj2ajp0HXUWYiF8ABu1iMQ2', leftIcon: 'tabler:calendar-event' },
+      { text: 'Conocer mas', href: '#features' },
+    ]}
+    image={{
+      src: '~/assets/images/hero-phone.png',
+      alt: 'AstroWind Hero Image',
+    }}
+  >
+    <Fragment slot="title">
+      PVNUBE
+      ERP + CRM
+      EN LA NUBE
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      
+      Toda tu <span class="font-semibold">administración en línea</span>, disponible los 365 dias del año, las 24 horas ¡Estés donde estés!
+    </Fragment>
+  </Hero2>
+
+    <!-- Content Widget **************** -->
+
+    <Content
+    title="Controla tu negocio desde cualquier sitio"
+    subtitle="Descubre como PVNUBE puede ayudarte a administrar tu empresa de manera eficiente y segura."
+    isReversed
+    items={[
+      {
+        title: 'Todos los dispositivos',
+        description: `<span class="font-semibold">PVNUBE</span> es compatible con una amplia gama de dispositivos para adaptarse a tus necesidades.`,
+      },
+      {
+        title: 'Lectores de códigos de barras.',
+        description:
+          'Agiliza los procesos de gestión de inventario con la capacidad de crear y leer códigos de barras.',
+      },
+      {
+        title: 'Impresoras de tickets.',
+        description: `Imprime tickets de venta y notas de venta de manera rápida y sencilla.`,
+      },
+      {
+        title: 'Colectores de inventario.',
+        description: `Realiza conteos físicos de inventario de forma eficiente y precisa.`,
+      },
+      {
+        title: 'Impresoras de códigos de barras',
+        description: `Imprime códigos de barras para productos, etiquetas de precios y más.`,
+      },
+      {
+        title: 'Cajones de dinero',
+        description: `Controla el efectivo de tu negocio con cajones de dinero seguros y confiables.`,
+      }
+    ]}
+    image={{
+      src: '~/assets/images/hero-phone-2.png',
+      alt: 'Startup Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        PVNUBE ERP + CRM <br /><span class="text-2xl">Conecta todas tus herramientas en un <br /> Sistema ERP en la nube</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Features Widget *************** -->
+
+  <Features2
+    id="features"
+    title="Todos los módulos que tu empresa necesita en un sistema ERP"
+    subtitle="PVNUBE es un sistema ERP + CRM en la nube, que te permite administrar tu empresa desde cualquier lugar y en cualquier momento. Conoce todas las funcionalidades que te ofrece:"
+    columns={3}
+    items={[
+      {
+        title: 'Inventario',
+        description: `
+          <ul style="list-style: disc;" class="text-muted">
+            <li>Permite la creación y lectura de códigos de barras, lo cual agiliza los procesos de gestión.</li>
+            <li>Incluye listas de precios, precios por escala y promociones para mayor flexibilidad.</li>
+            <li>Ofrece la capacidad de gestionar almacenes y tiendas sin límite alguno.</li>
+            <li>Facilita los traspasos entre almacenes de forma eficiente.</li>
+            <li>Permite el manejo de lotes, caducidades y pedimentos con precisión.</li>
+            <li>Realiza conteos físicos mediante dispositivos móviles para mayor practicidad.</li>
+            <li>Proporciona pronósticos de inventarios útiles para planificar.</li>
+            <li>Incluye la gestión de tallas y colores, ideal para sectores específicos.</li>
+          </ul>
+        `,
+        icon: 'tabler:file-dollar',
+      },
+      {
+        title: 'Ventas',
+        description: `
+          <ul style="list-style: disc;" class="text-muted">
+            <li>En primer lugar, incluye un sistema de apartado para facilitar la gestión de pagos.</li>
+            <li>Además, soporta operaciones en multimoneda, ideal para negocios internacionales.</li>
+            <li>Por otra parte, permite generar cotizaciones de manera eficiente.</li>
+            <li>Asimismo, facilita la gestión de pedidos para optimizar procesos.</li>
+            <li>También ofrece herramientas para crear notas de venta.</li>
+            <li>Incluye, además, opciones para remisiones y facturas.</li>
+            <li>Por último, gestiona devoluciones y el control de embarques.</li>
+          </ul>`,
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Facturación',
+        description:`
+          <ul style="list-style: disc;" class="text-muted">
+            <li>Ofrece facturación multimoneda para manejar clientes internacionales.</li>
+            <li>Además, incluye la generación de notas de crédito cuando sea necesario.</li>
+            <li>Por otro lado, integra opciones avanzadas de factoraje financiero para mejorar el flujo de caja.</li>
+            <li>Asimismo, soporta la emisión de CFDI de traslado y carta porte.</li>
+            <li>También permite gestionar CFDI de recepción de pagos con facilidad.</li>
+            <li>Incluye, además, herramientas para administrar pedimentos.</li>
+            <li>Finalmente, ofrece soporte para el uso de addendas.</li>
+          </ul>`,
+        icon: 'tabler:file-check',
+      },
+      {
+        title: 'Compras',
+        description: `
+          <ul style="list-style: disc;" class="text-muted">
+            <li>En primer lugar, soporta compras multimoneda para mayor flexibilidad comercial.</li>
+            <li>Además, gestiona proveedores y cuentas por pagar de manera eficiente.</li>
+            <li>Por otra parte, permite crear órdenes de compra, ya sean aprobadas o directas.</li>
+            <li>Asimismo, facilita recepciones parciales para un mejor control de inventario.</li>
+            <li>También incluye la captura de compras mediante XML del proveedor.</li>
+            <li>Incluye, además, opciones para gestionar devoluciones fácilmente.</li>
+            <li>Finalmente, ofrece herramientas para elaborar cuadros comparativos detallados.</li>
+          </ul>
+        `,
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Finanzas',
+        description: `
+          <ul style="list-style: disc;" class="text-muted">
+            <li>Cuentas por cobrar y por pagar</li>
+            <li>Cortes de caja</li>
+            <li>Integración para recepción de pagos en Walmart, Sams, 7eleven, Farmacias del ahorro y Farmacias Guadalajara</li>
+            <li>Control de gastos por departamento</li>
+            <li>Cálculo automatizado de comisiones</li>
+            <li>Integración de link de pago para cobro remoto</li>
+            <li>Control de tesorería</li>
+            <li>Conciliación bancaria</li>
+            <li>Presupuestos</li>
+          </ul>
+        `,
+        icon: 'tabler:cash-banknote',
+      },
+      {
+        title: 'CRM',
+        description: `
+          <ul style="list-style: disc;" class="text-muted">
+            <li>Procesos estructurados de venta</li>
+            <li>Prospectos</li>
+            <li>Oportunidades</li>
+            <li>Competidores</li>
+            <li>Registro de visitas a clientes con geolocalización</li>
+            <li>Integración con whatsapp</li>
+            <li>Encuestas de satisfacción</li>
+            <li>Grabación de llamadas (se compra por separado)</li>
+            <li>Envío de SMS (se compra por separado)</li>
+            <li>Control de tareas (to-do list)</li>
+          </ul>`,
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Producción',
+        description: `
+          <ul style="list-style: disc;" class="text-muted">
+            <li>Para comenzar, permite gestionar órdenes de producción de forma eficiente.</li>
+            <li>Además, incluye listas y explosivos de materiales para mayor precisión en los procesos.</li>
+            <li>También ofrece un control detallado de la materia prima utilizada.</li>
+            <li>Por otro lado, facilita la gestión de lotes tanto en materia prima como en producto terminado.</li>
+            <li>Finalmente, proporciona manuales de procedimientos que ayudan a estandarizar las operaciones.</li>
+          </ul>
+        `,
+        icon: 'tabler:building-factory-2',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `For SaaS businesses, user experience is key. AstroWind enhances showcasing SaaS solutions intuitively. The template's Astro 4.0 and Tailwind CSS integration guarantees user-friendly experience, mirroring your software's efficiency. Customize pages to communicate SaaS value and solutions for your audience.`,
+      },
+      {
+        title: 'Benefits:',
+        description: `Ensuring a cohesive and user-centric design for your SaaS website. <br /> Effectively communicate complex SaaS features through visual aids, animations, and interactive elements. <br /> Prioritize user needs and pain points through well-structured layouts and clear navigation. <br /> Encourage visitors to take action with strategically placed CTAs. <br /> Ensures your SaaS website works seamlessly across all devices.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+      alt: 'SaaS Businesses Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Personalizable a tu proceso comercial <br /><span class="text-2xl">Adaptable a tus necesidades</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `Your portfolio is your masterpiece, and AstroWind is your canvas. Whether you're a designer, photographer, artist, or any other creative professional, AstroWind empowers you to showcase your work with elegance and sophistication. Tailored to highlight your creative projects, AstroWind's templates offer a visually immersive experience that lets your portfolio shine.`,
+      },
+      {
+        title: 'Benefits:',
+        description: `Serve as a captivating backdrop to showcase your creative work, capturing attention and leaving a lasting impression. <br /> Tailor your portfolio to reflect your unique style and artistic vision. <br /> Prioritizes visuals, allowing you to present your work in high-resolution detail that draws viewers into your creations. <br /> Enables seamless navigation for effortless portfolio exploration.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Portfolio Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Por fin un sistema que hace todo por ti <br /><span class="text-2xl">Sin complicaciones</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    items={[
+      {
+        title: 'Description:',
+        description: `For small businesses, a well-crafted website can be a game-changer. AstroWind empowers small businesses to not only establish a credible online presence but also convert visitors into loyal customers. The template's thoughtful design and optimization features ensure that your website doesn't just attract attention but also guides visitors through a seamless journey, ultimately leading to conversions.`,
+      },
+      {
+        title: 'Benefits:',
+        description: `Present your small business with a professional and polished website that instills confidence and trust among visitors. <br /> Strategically placed CTAs, user-friendly forms, and optimized layouts work together to drive user engagement and conversions. <br /> Ensure a smooth browsing experience, reducing bounce rates and encouraging interaction.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Small Business Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Suscripción unica <br /><span class="text-2xl">Sin costos ocultos</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  
+    <!-- Pricing Widget ******************* -->
+
+    <Pricing
+    title="Elige tu plan y empieza ahora"
+    prices={[
+      {
+        title: 'Plan Nube Individual',
+        subtitle: '1 usuario',
+        price: 999,
+        period: '/ mensuales + IVA por usuario',
+        callToAction: {
+          target: '_blank',
+          text: 'Contrata aqui',
+          href: '#',
+        },
+            },
+            {
+        title: 'Plan Nube Pequeña',
+        subtitle: '2 - 4 usuarios',
+        price: 949,
+        period: '/ mensuales + IVA por usuario',
+        callToAction: {
+          target: '_blank',
+          text: 'Contrata aqui',
+          href: '#',
+        },
+            },
+            {
+        title: 'Plan Nube Mediana',
+        subtitle: '5 - 9 usuarios',
+        price: 899,
+        period: '/ mensuales + IVA por usuario',
+        callToAction: {
+          target: '_blank',
+          text: 'Contrata aqui',
+          href: '#',
+        },
+            },
+            {
+        title: 'Plan Nube Grande',
+        subtitle: '10 - 14 usuarios',
+        price: 799,
+        period: '/ mensuales + IVA por usuario',
+        callToAction: {
+          target: '_blank',
+          text: 'Contrata aqui',
+          href: '#',
+        },
+      },
+      {
+        title: 'Plan Corporativo',
+        subtitle: '15 - 19 usuarios',
+        price: 749,
+        period: '/ mensuales + IVA por usuario',
+        callToAction: {
+          target: '_blank',
+          text: 'Contrata aqui',
+          href: '#',
+        },
+      },
+      {
+        title: 'Plan Empresarial',
+        subtitle: '+20 usuarios',
+        price: 699,
+        period: '/ mensuales + IVA por usuario',
+        callToAction: {
+          target: '_blank',
+          text: 'Contrata aqui',
+          href: '#',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+    ]}
+  />
+
+    <!-- Steps2 Widget ****************** -->
+
+    <Steps2
+    title="Contactanos"
+    subtitle='<span class="font-bold">¿Necesitas ayuda antes de empezar?</span> Comunícate de forma gratuita con nuestro equipo especializado. Estan listos para ayudarte.''
+    callToAction={{
+      text: 'Chatea con un experto',
+      href: 'https://api.whatsapp.com/send/?phone=525588546699&text=Hola%2C%20estoy%20navegando%20en%20la%20p%C3%A1gina%20de%20PVNUBE%20y%20quisiera%20hablar%20con%20un%20asesor.&type=phone_number&app_absent=0',
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Call us',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Follow us',
+        description: '@example',
+        icon: 'tabler:brand-twitter',
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Preguntas frecuentes"
+    items={[
+      {
+        title: '¿Hay un costo de implementación y capacitación para el sistema?',
+        description:
+          'Si, además de la suscripción hay un pago único por concepto de configuración, capacitación y adaptación del sistema a tu negocio.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Existen plazos forzosos?',
+        description: `Puedes cancelar en el momento que quieras. Estamos tan seguros que nuestro programa te ahorrará tantos costos y aumentará tus utilidades que no requerimos plazos forzosos para convencerte de mantenerte en nuestra plataforma.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Hay otros costos ocultos?',
+        description:
+          'Los únicos conceptos a pagar son: Pago único por implementación y pago de suscripción, no existen otros pagos por hacer a excepción de integración con plataformas de terceros.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Cuántas horas de soporte técnico incluye?',
+        description: `Te asignaremos un agente personalizado de soporte técnico y tu suscripción incluye soporte ilimitado vía whatsapp.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Cada cuando se actualiza el sistema y cuál es el precio?',
+        description: `El sistema tiene actualizaciones prácticamente a diario, el usuario no debe realizar ninguna acción para obtenerlas y no tienen precio adicional.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Cuántos timbres incluye?',
+        description: `Timbres ilimitados bajo una política de uso justo.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Puedo facturar con varias razones sociales?',
+        description: `Si, aunque los timbres ilimitados son para una razón social.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Requiero algún servidor o red para el sistema?',
+        description: `Basta con que cuentes con un dispositivo por internet.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: '¿Es un punto de venta?',
+        description: `Lo incluye. Pvnube es un sistema administrativo conformado por un software punto de venta, ERP y CRM en una única plataforma.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Tengo usuarios que van a acceder solo a algunos módulos del sistema. ¿Estos usuarios tienen precios diferentes?',
+        description: `En PVnube todos los usuarios tienen el mismo precio. Entre más usuarios contrates, más económico es el precio por usuario.`,
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Conoce nuestro blog"
+    information={`Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>
